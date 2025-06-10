@@ -6,70 +6,28 @@
     <title>My Page</title>
 
     <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="./js/script.js" defer></script>
 </head>
 <body>
    <main class="container">
     <section class="product-list">
         <div class="product">
-            <input type="text" placeholder="Назва товару" class="search-input"/>
-            <button class="search-button" data-tooltip="Додати товар">Додати</button>
-        </div>
-        <div class="product">
-            <span class="name crossed">Помідори</span>
-            <div class="amount-bar">
-                <span class="amount-available">2</span>
-            </div>
-            <div class="product-condition">
-                <span class="condition">Не куплено</span>
-            </div>
-        </div>
-        <div class="product">
-            <span class="name">Печиво</span>
-            <div class="amount-bar">
-                <button class="change-button minus" data-tooltip="Відняти одиницю">-</button>
-                <span class="amount-available">2</span>
-                <button class="change-button plus" data-tooltip="Додати одиницю">+</button>
-            </div>
-            <div class="product-condition">
-                <span class="condition">Куплено</span>
-                <button class="delete-button" data-tooltip="Видалити">×</button>
-            </div>
-        </div class>
-        <div class="product">
-            <input class="name-input" value="Сир" />
-            <div class="amount-bar">
-                <button class="change-button minus" data-tooltip="Відняти одиницю">-</button>
-                <span class="amount-available">3</span>
-                <button class="change-button plus" data-tooltip="Додати одиницю">+</button>
-            </div>
-            <div class="product-condition">
-                <span class="condition">Куплено</span>
-                <button class="delete-button" data-tooltip="Видалити">×</button>
-            </div>
+            <input type="text" placeholder="Назва товару" class="add-input"/>
+            <button class="add-button" data-tooltip="Додати товар">Додати</button>
         </div>
     </section>
     <aside class="buylist">
         <div class="product">
             <span class="title">Залишилося</span>
         </div>
-        <div class="product default-position">
-            <span class="product-item">
-                <span class="product-name">Печиво</span>
-                <span class="amount">2</span>
-            </span>
-            <span class="product-item">
-                <span class="product-name">Сир</span>
-                <span class="amount">1</span>
-            </span>
+        <div class="product default-position" id="not-bought">
+            
         </div>
         <div class="product">
             <span class="title">Куплено</span>
         </div>
-        <div class="product default-position">
-            <div class="product-item">
-                <span class="product-name crossed">Помідори</span>
-                <span class="amount crossed">2</span>
-            </div>
+        <div class="product default-position" id="bought">
+
         </div>
     </aside>
     <section class="badge">

@@ -61,7 +61,7 @@ span {
     border-radius: 5px;
 }
 
-.search-input {
+.add-input {
     width: 90%;
     height: 40px;
     border-radius: 5px 0px 0px 5px;
@@ -72,12 +72,12 @@ span {
     border-right: none;
 }
 
-.search-input:focus {
+.add-input:focus {
     outline: none;
     border-color: rgba(66, 131, 202, 255);
 }
 
-.search-button {
+.add-button {
     width: 10%;
     height: 30px;
     display: flex;
@@ -95,7 +95,7 @@ span {
     position: relative;
 }
 
-.search-button::after {
+.add-button::after {
     content: attr(data-tooltip);
     position: absolute;
     top: -30px;
@@ -111,7 +111,7 @@ span {
     transition: all 0.3s ease;
 }
 
-.search-button:hover::after {
+.add-button:hover::after {
     opacity: 1;
     transform: scale(1);
 }
@@ -148,6 +148,29 @@ span {
     border-radius: 5px;
     margin-right: 5px;
     box-shadow: inset 0px -5px rgba(232, 232, 232, 255);
+    cursor: pointer;
+    position: relative;
+}
+
+.condition::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -30px;
+    left: 0px;
+    transform: translateY(10px) scale(0.5);
+    background-color: rgba(175, 0, 218, 0.9);
+    color: white;
+    font-size: 14px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.condition:hover::after {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .crossed {
@@ -197,6 +220,16 @@ span {
     box-shadow: inset 0px -5px rgba(176, 54, 48, 255);
 }
 
+.minus:disabled {
+    background-color: rgba(201, 59, 51, 0.5);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.minus:disabled::after {
+    display: none;
+}
+
 .delete-button {
     width: 40px;
     height: 40px;
@@ -234,6 +267,29 @@ span {
 
 .name{
     width: 200px;
+    cursor: pointer;
+    position: relative;
+}
+
+.name::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    transform: translateY(10px) scale(0.5);
+    background-color: rgba(175, 0, 218, 0.9);
+    color: white;
+    font-size: 14px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.name:hover::after {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .title {
@@ -251,6 +307,8 @@ span {
 
 .default-position{
     justify-content: left;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .name-input{
@@ -276,11 +334,6 @@ span {
     align-items: center;
     padding: 10px;
     border-radius: 5px;
-    margin-right: 5px;
-}
-
-.product-item:last-child{
-    margin-right: 0px;
 }
 
 .amount {
@@ -411,6 +464,23 @@ span {
     .title {
         font-size: 16px;
     }
+    .add-input {
+        width: 80%;
+        font-size: 14px;
+    }
+    .add-button {
+        width: 20%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-condition{
+        width: 180px;
+    }
+    .condition {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -421,9 +491,9 @@ span {
     }
     .product-list, .buylist {
         width: 100%;
+        margin-right: 0px;
     }
     .default-position {
         flex-direction: row;
-        gap: 0px;
     }
 }
